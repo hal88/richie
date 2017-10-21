@@ -64,7 +64,7 @@ function init() {
                          y_fill: false,
                          track_hover: true});
     let gicon = Gio.icon_new_for_string(Me.path + (got_score
-                                        && "/icons/bat.svg"));
+                                        && "/icons/bat-bw.svg"));
     let icon = new St.Icon({gicon: gicon});
     button.set_child(icon);
     button.connect('button-press-event', clicked);
