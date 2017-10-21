@@ -1,0 +1,59 @@
+#!/usr/bin/perl -w
+
+use LWP;
+use XML::Parser;
+use Data::Dumper;
+use strict;
+
+sub usage {
+	print "usage: ./cricket_score team\n where team is \"Australia\", \"India\", \"West Indies\", \"Sri Lanka\", \"South Africa\", \"England\", \"Pakistan\" or whatever crickinfo rss is covering\n ./cricet_score all\n gives you all the scores\n";
+	exit 1;
+}
+my $team;
+if( @ARGV ) {
+	$team = shift;
+} else {
+	&usage();
+}
+
+my $browser = LWP::UserAgent->new;
+my $url = 'http://www.cricinfo.com/rss/livescores.xml';
+
+my $response = $browser->get($url);
+warn "Can't get $url -- ", $response->status_line unless
+	$response->is_success;
+
+my $output = $response->content;
+#$output =~ s/\&amp;/\&/gx;
+
+if($team =~ m/\ball\b/i){
+	my $p1 = new XML::Parser(Style => 'Tree');
+	my $tree = $p1->parse($output);
+	my @entries = @{ $tree->[1][4] };
+	my $next_is_score = 0;
+	foreach my $thing (@entries){
+		if($thing =~ m/item/){
+			$next_is_score = 1;
+		}else{
+			if($next_is_score){
+				my $score =  $thing->[4][2];
+                print &print_score($score);
+				$next_is_score = 0;
+			}
+		}
+	}
+}
+
+if($response->content =~ m/<description>(.*$team.*)<\/description>/i){
+	my $score = $1;
+	print &print_score($score);
+}
+
+sub print_score {
+    my $score = shift;
+    #$score =~ s/\// for /g;
+    #$score =~ s/\s+v\s+/, /g;
+    $score =~ s/&amp;/&/g;
+	#return $score, ".\n";
+	return $score, "\n";
+}
