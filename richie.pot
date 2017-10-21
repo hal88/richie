@@ -1,0 +1,28 @@
+# richie
+# Copyright (C) 2017 Hal Ashburner
+# This file is distributed under the same license as the gnome-shell package.
+# hal@ashburner.info 2017
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gnome Shell Extension Richie\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-21 13:48+0200\n"
+"PO-Revision-Date: 2017-10-21 13:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: extension.js:24
+#, javascript-format
+msgid ""
+"Sorry, no score for you today:\n"
+"%s"
+msgstr ""
+
+#: extension.js:26
+msgid "Richie:"
+msgstr ""

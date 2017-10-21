@@ -1,0 +1,19 @@
+
+.richie-label {
+    font-size: 16px;
+    font-family: Monospace;
+    color: #000000;
+    /* Pale, light grayish arctic blue A9ECF9 */
+    background-color: rgba(255,255, 255,0.88);
+    border-radius: 5px;
+    padding: .5em;
+}
+
+.richie-label-black {
+    font-size: 16px;
+    font-family: Monospace;
+    color: #eeeeee;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: .5em;
+}

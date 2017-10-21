@@ -1,0 +1,12 @@
+{
+  "description": "Richie knows the score", 
+  "gettext-domain": "richie", 
+  "name": "richie", 
+  "settings-schema": "org.gnome.shell.extensions.richie", 
+  "shell-version": [
+    "3.18"
+  ], 
+  "url": "https://github.com/", 
+  "uuid": "richie@ashburner.info", 
+  "version": 5
+}
