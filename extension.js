@@ -23,7 +23,7 @@ function clicked() {
         score = "";
         try {
             let [res, stdout, stderr, status] = 
-                GLib.spawn_command_line_sync('cricket_score Australia');
+                GLib.spawn_command_line_sync('cricket_score all');
             score = String(stdout).trim()
             if (!score)
                 error = String(stderr).trim();
