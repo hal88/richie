@@ -23,7 +23,7 @@ function clicked() {
         score = "";
         try {
             let [res, stdout, stderr, status] = 
-                GLib.spawn_command_line_sync('cricket_score all');
+                GLib.spawn_command_line_sync(Me.path + '/cricket_score all');
             score = String(stdout).trim()
             if (!score)
                 error = String(stderr).trim();
@@ -60,8 +60,8 @@ function init() {
     button = new St.Bin({style_class: 'panel-button',
                          reactive: true,
                          can_focus: true,
-                         x_fill: true,
-                         y_fill: false,
+                         x_expand: true,
+                         y_expand: false,
                          track_hover: true});
     let gicon = Gio.icon_new_for_string(Me.path + (got_score
                                         && "/icons/bat-bw.svg"));

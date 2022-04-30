@@ -4,7 +4,7 @@
   "name": "richie", 
   "settings-schema": "org.gnome.shell.extensions.richie", 
   "shell-version": [
-    "3.18"
+    "3.18", "40", "42"
   ], 
   "url": "https://github.com/hal88/richie", 
   "uuid": "richie@ashburner.info", 
